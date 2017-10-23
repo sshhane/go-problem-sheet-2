@@ -9,4 +9,4 @@ npm install curl-cmd
 
 cmder is a console emulator for Windows
 
-3. 
+3. curl --header "My-Header: Testing-head" localhost:8080/ -v

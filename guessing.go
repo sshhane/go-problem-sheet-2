@@ -8,8 +8,7 @@ import (
 )
 
 func requestHandler(w http.ResponseWriter, r *http.Request) {
-	// fmt.Fprintln(w, "r.URL:              ",  r.URL              )
-	fmt.Fprintln(w, "Guessing Game")
+	fmt.Fprintln(w, "<h1>Guessing Game<h1>")
 
 }
 
