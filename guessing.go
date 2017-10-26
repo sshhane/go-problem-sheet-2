@@ -10,10 +10,10 @@ import (
 )
 type WebData struct {
     Title string
+	head2 string
 }
 
 func guessHandler(w http.ResponseWriter, r *http.Request) {
-	// fmt.Fprintln(w, "<h1>Guessing Game<h1>")
 	w.Header().Set("Content-Type", "text/html")
 
     // Title := "Guessing Game"
@@ -29,9 +29,10 @@ func guessHandler(w http.ResponseWriter, r *http.Request) {
 
 func layoutHandler(w http.ResponseWriter, r *http.Request) {
 
-	tmpl, _ := template.ParseFiles("guessing.html")
+	tmpl, _ := template.ParseFiles("guess.tmpl")
     wd := &WebData {
         Title: "Guessing Game",
+		// head2: "Pick a number between 1 & 20:";
     }
     tmpl.Execute(w, wd)
 
