@@ -4,7 +4,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"html/template"
 	"net/http"
 	"math/rand"
@@ -14,6 +14,7 @@ import (
 type WebData struct {
     Title string
 	Head2 string
+	Guess int
 }
 
 func guessHandler(w http.ResponseWriter, r *http.Request) {
@@ -41,20 +42,19 @@ func guessHandler(w http.ResponseWriter, r *http.Request) {
 
 	// set cookie
 	http.SetCookie(w, cookie)
-	//////////////////////////
+
+	guessVal, _ := strconv.Atoi(r.FormValue("guess"))
 
     wd := &WebData {
         Title: "Guessing Game",
 		Head2: "Pick a number between 1 & 20:",
+		Guess: guessVal,
     }
 	
 	tmpl, _ := template.ParseFiles("guess.tmpl")
 
     tmpl.Execute(w, wd)
 
-}
-
-func layoutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // main
