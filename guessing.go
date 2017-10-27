@@ -55,6 +55,19 @@ func guessHandler(w http.ResponseWriter, r *http.Request) {
 
     tmpl.Execute(w, wd)
 
+
+	// if target & guess are set
+	if guess == target {
+		
+			// congrats
+			// target = new rand
+		// else
+			//if high
+			//el if low
+
+	}
+
+		
 }
 
 // main
